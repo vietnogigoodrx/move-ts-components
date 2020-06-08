@@ -158,7 +158,7 @@ export function activate(context: vscode.ExtensionContext) {
                     const dirnameParts = dirname.split('/')
                     const parentFolder = dirnameParts[dirnameParts.length - 1]
                     const fileName = parsed.name
-                    const isComponent = fileName[0].toUpperCase() === fileName[0]
+                    const isComponent = fileName[0].toUpperCase() === fileName[0] && fileName.indexOf('.') === -1
                     
                     if (parentFolder !== fileName && isComponent) {
                         toMoveUris.push(file)
